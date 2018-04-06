@@ -5,12 +5,12 @@ part of test;
  */
 abstract class MultipleChoice extends Question
 {
-  
+
   /**
    * the selectable answers for this question
    */
   List<Answer> answers = new List<Answer>();
-  
+
   /**
    * Constructor
    */
@@ -18,12 +18,12 @@ abstract class MultipleChoice extends Question
   {
     this.text = text;
   }
-  
+
   /**
    * Return a DOM element radio button with an onclick event for this answer
    */
   Element _makeButton(Answer answer, int number);
-  
+
   /**
    * Builds the answers into a dom element with an html form
    */
@@ -42,7 +42,7 @@ abstract class MultipleChoice extends Question
     }
     return output;
   }
-  
+
   /**
    * Build the question into a DOM element.
    */
@@ -52,7 +52,6 @@ abstract class MultipleChoice extends Question
     output.id = "question";
     output.insertAdjacentElement('beforeEnd', new Element.html("""<p>${this.text}</p>"""));
     output.insertAdjacentElement('beforeEnd', this.displayAnswers());
-    //output.addHtml("<input id=\"nextQuestion\" type=\"button\" value=\"Next Question\">");
     return output;
   }
 }
